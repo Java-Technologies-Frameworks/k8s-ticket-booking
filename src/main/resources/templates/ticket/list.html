@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket List</title>
+</head>
+<body>
+<h2 style="color: red;">Qualigy Tech India Pvt. Ltd.</h2>
+<h2 style="color: blue;">Ticket List</h2>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Event Name</th>
+        <th>Venue</th>
+        <th>Available Seats</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="ticket : ${tickets}">
+        <td th:text="${ticket.id}"></td>
+        <td th:text="${ticket.eventName}"></td>
+        <td th:text="${ticket.venue}"></td>
+        <td th:text="${ticket.availableSeats}"></td>
+        <td>
+            <a th:href="@{'/tickets/book/' + ${ticket.id}}">Book</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
