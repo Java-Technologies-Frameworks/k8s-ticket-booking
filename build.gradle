@@ -31,7 +31,8 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
-
+archivesBaseName = 'k8s-ticket-booking'
+version = '1.0.0'
 tasks.named('test') {
 	useJUnitPlatform()
 }
